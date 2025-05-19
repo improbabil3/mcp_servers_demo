@@ -1,0 +1,15 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "MCP Tool Server",
+  "name_for_model": "mcp_tool_server",
+  "description_for_human": "Accedi e usa i tool MCP (list, add, complete prodotti) via LLM function calling.",
+  "description_for_model": "Permette a un LLM di elencare, aggiungere e completare prodotti tramite i tool MCP esposti via HTTP.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://127.0.0.1:8000/copilot_integration_template/openapi.yaml"
+  },
+  "contact_email": "support@example.com"
+}

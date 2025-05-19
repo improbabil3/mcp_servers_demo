@@ -1,0 +1,6 @@
+{
+  "server": "http://localhost:8000",
+  "name": "MCP Docker Server",
+  "description": "Server MCP avviato in Docker su porta 8000",
+  "type": "http"
+}

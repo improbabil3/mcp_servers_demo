@@ -1,0 +1,70 @@
+openapi: 3.0.1
+info:
+  title: MCP Tool Server API
+  description: API per esporre i tool MCP (list, add, complete prodotti) come function calling per LLM/ChatGPT/Copilot.
+  version: '1.0.0'
+servers:
+  - url: https://YOUR_DOMAIN
+paths:
+  /tool/list_items:
+    post:
+      summary: Restituisce l'elenco di tutti i prodotti attualmente presenti nella lista TODO.
+      operationId: list_items
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Lista prodotti
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /tool/new_item:
+    post:
+      summary: Aggiunge un nuovo prodotto alla lista TODO.
+      operationId: new_item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+              required:
+                - title
+      responses:
+        '200':
+          description: Prodotto aggiunto
+          content:
+            application/json:
+              schema:
+                type: object
+  /tool/complete_item:
+    post:
+      summary: Rimuove un prodotto dalla lista TODO dato il suo ID.
+      operationId: complete_item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+              required:
+                - id
+      responses:
+        '200':
+          description: Prodotto completato
+          content:
+            application/json:
+              schema:
+                type: object
